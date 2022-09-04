@@ -1,7 +1,7 @@
 {
-  "name": "@snek-functions/template",
+  "name": "@snek-functions/registration",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "type": "module",
   "description": "Generated with `snek-functions init`",
   "author": "snek-at",
