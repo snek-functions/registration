@@ -1,6 +1,7 @@
 import {usersAdd, usersUpdate} from '@snek-functions/iam'
+import {IUser} from '@snek-functions/iam/dist/interfaces'
+
 import {fn} from './factory'
-import {User} from './types'
 
 const register = fn<
   {
@@ -8,9 +9,7 @@ const register = fn<
     password: string
     details: {firstName: string; lastName: string}
   },
-  {
-    user: User
-  }
+  IUser
 >(
   async ({email, password, details}, _, req) => {
     const addRes = await usersAdd.execute({email: email, password: password})
