@@ -1,10 +1,13 @@
 {
-  "name": "@snek-functions/template",
-  "version": "0.0.1",
-  "private": true,
+  "name": "@snek-functions/registration",
+  "version": "0.0.3",
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "description": "Generated with `snek-functions init`",
   "author": "snek-at",
   "config": {
@@ -13,7 +16,8 @@
     }
   },
   "dependencies": {
-    "@snek-at/functions": "*"
+    "@snek-at/functions": "*",
+    "@snek-functions/iam": "*"
   },
   "devDependencies": {
     "commitizen": "^4.2.5",
@@ -25,7 +29,7 @@
   },
   "scripts": {
     "build": "sf build -f . --declaration",
-    "start": "sf build -f . && IS_OFFLINE=true nodemon --watch dist --exec sls offline",
+    "start": "sf build -f . && IS_OFFLINE=true nodemon --watch dist --exec sls offline --httpPort 4030 --lambdaPort 4032",
     "deploy": "sls deploy",
     "postinstall": "sf install"
   },

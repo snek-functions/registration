@@ -1,4 +1,4 @@
-service: template
+service: registration
 frameworkVersion: '3'
 
 plugins:
@@ -21,6 +21,7 @@ provider:
 
   environment:
     CODESPACE_NAME: ${env:CODESPACE_NAME, ""}
+    ENDPOINT_URL_REGISTRATION: ${env:ENDPOINT_URL_REGISTRATION, ""}
 
   ecr:
     images:
