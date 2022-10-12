@@ -22,7 +22,7 @@ const prepare = fn<
 
         const { hash } = await import('./internal/index.js')
 
-        if (user.user_id !== '0') {
+        if (user.user_id === '0') {
             let passwordHash: string = await hash.generatePasswordHash(password)
 
             return {
