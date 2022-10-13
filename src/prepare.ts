@@ -10,9 +10,7 @@ const prepare = fn<
     }
 >(
     async ({ username, password, details }, _, req) => {
-        // Does one alias per user really make sense?
         console.log(process.env.CODESPACE_NAME)
-        // const user = (await storage.queryDatabaseForUser(username)) as User
         const userStr = await spawnChild('venv/bin/python', 'internal/storage.py', [
             username
         ])
