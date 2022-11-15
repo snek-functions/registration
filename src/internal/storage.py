@@ -71,6 +71,7 @@ def main(username):
         "password_hash": "undefined" \
     }}'.replace(" ", "")
 
+    pull_db()
     fetched = fetch(username)
 
     if fetched:
@@ -79,16 +80,6 @@ def main(username):
             "user_id": "{fetched[1]}", \
             "password_hash": "{fetched[2]}" \
         }}'.replace(" ", "")
-    else:
-        pull_db()
-        refetched = fetch(username)
-
-        if refetched:
-            out = f'{{ \
-                "alias": "{refetched[0]}", \
-                "user_id": "{refetched[1]}", \
-                "password_hash": "{refetched[2]}" \
-            }}'.replace(" ", "")
 
     print(out)
 
